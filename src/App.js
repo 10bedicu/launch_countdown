@@ -29,14 +29,14 @@ const useCountdown = (targetDate) => {
       setCountdown(calculateCountdown(targetDate));
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
   return { countdown };
 };
 
+const targetDate = new Date("2022-11-28T16:00:00");
 function App() {
   // Countdown to 28th November 2022 at 16:00:00
-  const targetDate = new Date("2022-11-28T16:00:00");
   const { countdown } = useCountdown(targetDate);
 
   return (
