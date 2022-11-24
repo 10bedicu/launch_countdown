@@ -44,11 +44,11 @@ function App() {
       {/* Card with Title "Check back for the 10BedICU Karnataka launch in:"  */}
       <div className="flex items-center justify-center h-screen">
         <div
-          className="max-w-4xl p-12 bg-white rounded-lg shadow-xl flex justify-center flex-col items-center"
+          className="max-w-md md:max-w-4xl p-12 bg-white rounded-lg shadow-xl flex justify-center flex-col items-center"
           style={{ backgroundColor: "rgb(20, 113, 122)" }}
         >
           <img src={logo} className="w-24" alt="logo" />
-          <h5 className="text-white text-xl mt-8">
+          <h5 className="text-white text-xl mt-8 text-center">
             Check back for the 10BedICU Karnataka launch in:
           </h5>
 
