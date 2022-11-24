@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "./10bedicu.webp";
 
 const calculateCountdown = (targetDate) => {
   const now = new Date();
@@ -42,8 +43,12 @@ function App() {
     <div>
       {/* Card with Title "Check back for the 10BedICU Karnataka launch in:"  */}
       <div className="flex items-center justify-center h-screen">
-        <div className="max-w-4xl text-center items-center justify-center">
-          <h5 className="card-title">
+        <div
+          className="max-w-4xl p-12 bg-white rounded-lg shadow-xl flex justify-center flex-col items-center"
+          style={{ backgroundColor: "rgb(20, 113, 122)" }}
+        >
+          <img src={logo} className="w-24" alt="logo" />
+          <h5 className="text-white text-xl mt-8">
             Check back for the 10BedICU Karnataka launch in:
           </h5>
 
