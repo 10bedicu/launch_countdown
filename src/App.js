@@ -65,12 +65,12 @@ function App() {
           <img src={logo} className="w-24 mb-8" alt="logo" />
           {isExpired ? (
             <h1 className="text-2xl text-white font-bold mb-2 text-center">
-              Join us as we launch 10BedICU at 12 Locations across Manipur
+              Join us as we launch 10BedICU at 12 Locations across Nagaland
             </h1>
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
-                Check back for the 10BedICU Manipur launch in
+                Check back for the 10BedICU Nagaland launch in
               </h5>
 
               <div className="grid grid-flow-col gap-5 text-center auto-cols-max justify-center pt-8">
@@ -90,7 +90,7 @@ function App() {
                   <span className="countdown font-mono text-5xl">
                     <span style={{ "--value": countdown.minutes || 0 }}></span>
                   </span>
-                  min
+                  mins
                 </div>
                 <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                   <span className="countdown font-mono text-5xl">
