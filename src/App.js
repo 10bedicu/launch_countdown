@@ -64,9 +64,29 @@ function App() {
         >
           <img src={logo} className="w-24 mb-8" alt="logo" />
           {isExpired ? (
-            <h1 className="text-2xl text-white font-bold mb-2 text-center">
-              Join us as we launch 10BedICU at 12 Locations across Nagaland
-            </h1>
+            <>
+              <h1 className="text-2xl text-white font-bold mb-2 text-center">
+                Join us as we launch 10BedICU at 12 Locations across Nagaland
+              </h1>
+              <div className="w-full mt-8">
+                <div style={{ position: "relative", paddingTop: "56.25%" }}>
+                  <iframe
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    src="https://www.youtube.com/embed/f_YUGbw_Bnk"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </>
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
@@ -101,25 +121,6 @@ function App() {
               </div>
             </>
           )}
-
-          <div className="w-full mt-8">
-            <div style={{ position: "relative", paddingTop: "56.25%" }}>
-              <iframe
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-                src="https://www.youtube.com/embed/f_YUGbw_Bnk"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
         </div>
       </div>
     </div>
