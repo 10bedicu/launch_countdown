@@ -65,12 +65,12 @@ function App() {
           <img src={logo} className="w-24 mb-8" alt="logo" />
           {isExpired ? (
             <h1 className="text-2xl text-white font-bold mb-2 text-center">
-              Join us as we launch 10BedICU at 41 Locations across Karnataka
+              Join us as we launch 10BedICU at 12 Locations across Manipur
             </h1>
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
-                Check back for the 10BedICU Karnataka launch in
+                Check back for the 10BedICU Manipur launch in
               </h5>
 
               <div className="grid grid-flow-col gap-5 text-center auto-cols-max justify-center pt-8">
