@@ -90,7 +90,8 @@ function App() {
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
-                Check back for the 10BedICU Nagaland launch in
+                You can watch the launch of the 10BedICU project by the Hon'ble
+                CM Shri Neiphiu Rio live on Jan 6th, 9am in
               </h5>
 
               <div className="grid grid-flow-col gap-5 text-center auto-cols-max justify-center pt-8">
