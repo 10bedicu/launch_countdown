@@ -66,14 +66,13 @@ function App() {
           {isExpired ? (
             <>
               <h1 className="text-2xl text-white font-bold mb-2 text-center">
-                Join us as we launch 10BedICU at 12 Locations across Nagaland
+                {config.eventTitle}
               </h1>
             </>
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
-                You can watch the launch of the 10BedICU project by the Hon'ble
-                CM Shri Neiphiu Rio live on Jan 6th, 9am in
+                {config.countdownTitle}
               </h5>
 
               <div className="grid grid-flow-col gap-5 text-center auto-cols-max justify-center pt-8">
@@ -105,24 +104,26 @@ function App() {
             </>
           )}
 
-          <div className="w-full mt-8">
-            <div style={{ position: "relative", paddingTop: "56.25%" }}>
-              <iframe
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-                src="https://www.youtube.com/embed/EKcptMRAfXA"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+          {
+            config.videoUrl &&
+            <div className="w-full mt-8">
+              <div style={{ position: "relative", paddingTop: "56.25%" }}>
+                <iframe
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={config.videoUrl}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>}
         </div>
       </div>
     </div>
