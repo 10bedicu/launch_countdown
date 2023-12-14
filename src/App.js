@@ -72,7 +72,14 @@ function App() {
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
-                {config.countdownTitle}
+                {config.countdownTitle.split("\n").map((item, key) => {
+                  return (
+                    <span key={key}>
+                      {item}
+                      <br />
+                    </span>
+                  );
+                })}
               </h5>
 
               <div className="grid grid-flow-col gap-5 text-center auto-cols-max justify-center pt-8">
@@ -104,8 +111,7 @@ function App() {
             </>
           )}
 
-          {
-            config.videoUrl &&
+          {config.videoUrl && (
             <div className="w-full mt-8">
               <div style={{ position: "relative", paddingTop: "56.25%" }}>
                 <iframe
@@ -123,7 +129,8 @@ function App() {
                   allowFullScreen
                 ></iframe>
               </div>
-            </div>}
+            </div>
+          )}
         </div>
       </div>
     </div>
