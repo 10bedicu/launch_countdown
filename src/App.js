@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { format } from 'date-fns';
 import logo from "./assets/10bedicu.webp";
 import config from "./assets/config.json";
 
@@ -39,16 +40,21 @@ const useCountdown = (targetDate) => {
 };
 
 function App() {
-  // Countdown to 28th November 2022 at 16:00:00
+  const [title, setTitle] = useState(config.eventTitle)
+  const [videoUrl, setVideoUrl] = useState(config.videoUrl)
+  const [countdownTitle, setCountdownTitle] = useState(config.countdownTitle)
   const [targetDate, setTargetDate] = useState(new Date(config.targetDate));
   const { countdown, isExpired } = useCountdown(targetDate);
 
   useEffect(() => {
-    fetch("config.json").then((response) => {
-      response.json().then((data) => {
-        setTargetDate(new Date(data.targetDate));
-      });
-    });
+    fetch("https://basic-bundle-polished-scene-1aed.acash.workers.dev/").then(response => response.json()).then(
+      data => {
+        setTitle(data.title)
+        setVideoUrl(`https://www.youtube.com/embed/${data.videoID}`)
+        setTargetDate(new Date(data.startTime));
+        setCountdownTitle(`${data.title} You can watch the event live on \n${format(targetDate, 'EEE MMM dd yyyy hh:mm a')}`)
+      }
+    ).catch(console.error)
   }, []);
 
   return (
@@ -66,13 +72,13 @@ function App() {
           {isExpired ? (
             <>
               <h1 className="text-2xl text-white font-bold mb-2 text-center">
-                {config.eventTitle}
+                {title}
               </h1>
             </>
           ) : (
             <>
               <h5 className="text-2xl text-white font-bold mb-2 text-center">
-                {config.countdownTitle.split("\n").map((item, key) => {
+                {countdownTitle.split("\n").map((item, key) => {
                   return (
                     <span key={key}>
                       {item}
@@ -122,7 +128,7 @@ function App() {
                     width: "100%",
                     height: "100%",
                   }}
-                  src={config.videoUrl}
+                  src={videoUrl}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
