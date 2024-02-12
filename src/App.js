@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { format } from 'date-fns';
 import logo from "./assets/10bedicu.webp";
-import config from "./assets/config.json";
 
 const calculateCountdown = (targetDate) => {
   const now = new Date();
@@ -40,10 +39,10 @@ const useCountdown = (targetDate) => {
 };
 
 function App() {
-  const [title, setTitle] = useState(config.eventTitle)
-  const [videoUrl, setVideoUrl] = useState(config.videoUrl)
-  const [countdownTitle, setCountdownTitle] = useState(config.countdownTitle)
-  const [targetDate, setTargetDate] = useState(new Date(config.targetDate));
+  const [title, setTitle] = useState("")
+  const [videoUrl, setVideoUrl] = useState("")
+  const [countdownTitle, setCountdownTitle] = useState("")
+  const [targetDate, setTargetDate] = useState(new Date(0));
   const { countdown, isExpired } = useCountdown(targetDate);
 
   useEffect(() => {
@@ -52,7 +51,7 @@ function App() {
         setTitle(data.title)
         setVideoUrl(`https://www.youtube.com/embed/${data.videoID}`)
         setTargetDate(new Date(data.startTime));
-        setCountdownTitle(`${data.title} You can watch the event live on \n${format(targetDate, 'EEE MMM dd yyyy hh:mm a')}`)
+        setCountdownTitle(`${data.title} you can watch the event live on \n${format(targetDate, 'EEE MMM dd yyyy hh:mm a')}`)
       }
     ).catch(console.error)
   }, []);
@@ -117,7 +116,7 @@ function App() {
             </>
           )}
 
-          {config.videoUrl && (
+          {videoUrl && (
             <div className="w-full mt-8">
               <div style={{ position: "relative", paddingTop: "56.25%" }}>
                 <iframe
