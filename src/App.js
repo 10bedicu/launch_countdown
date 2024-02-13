@@ -51,7 +51,7 @@ function App() {
         setTitle(data.title)
         setVideoUrl(`https://www.youtube.com/embed/${data.videoID}`)
         setTargetDate(new Date(data.startTime));
-        setCountdownTitle(`${data.title} you can watch the event live on \n${format(targetDate, 'EEE MMM dd yyyy hh:mm a')}`)
+        setCountdownTitle(`${data.title} you can watch the event live on \n${format(data.startTime, 'EEE MMM dd yyyy hh:mm a')}`)
       }
     ).catch(console.error)
   }, []);
